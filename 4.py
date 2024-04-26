@@ -2,17 +2,19 @@ from collections import deque
 def dfs(graph, start):
     visited = set()
     components = []
+    # обход соседей вершины
     def explore(vertex):
-        visited.add(vertex)
-        components[-1].append(vertex)
-        for neighbour in range(len(graph[vertex])):
-            if graph[vertex][neighbour] == 1 and neighbour not in visited:
+        visited.add(vertex) # добавляем текущую вершину в множество
+        components[-1].append(vertex) # добавляем текущую вершину в последнюю компоненту связности
+        for neighbour in range(len(graph[vertex])): # проходимся по соседям
+            if graph[vertex][neighbour] == 1 and neighbour not in visited: # проверка соседа на непосещенную вершину
                 explore(neighbour)
     for vertex in range(len(graph)):
         if vertex not in visited:
-            components.append([])
-            explore(vertex)
-    return components
+            components.append([]) # добавляем новую компаненту
+            explore(vertex) 
+    return components 
+# чтение матрицы смежности
 def read_adjacency_matrix(file_path):
     with open(file_path, 'r') as f:
         lines = f.readlines()
