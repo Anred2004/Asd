@@ -1,4 +1,4 @@
-# Считываем матрицу смежности из файла
+# алгоритм Дейкстры Считываем матрицу смежности из файла
 def read_adjacency_matrix(file_name):
     adjacency_matrix = []
     with open(file_name, 'r') as file:
