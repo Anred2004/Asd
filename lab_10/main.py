@@ -1,3 +1,4 @@
+#алгоритм нахождения эйлерова цикла
 def is_eulerian_cycle(matrix):
     n = len(matrix)  # Количество вершин в графе
     for i in range(n):
