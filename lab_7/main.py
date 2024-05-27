@@ -1,4 +1,4 @@
-# Функция для чтения матрицы смежности из файла
+# алгоритм Прима Функция для чтения матрицы смежности из файла
 def read_adjacency_matrix(file_path):
   with open(file_path, 'r') as f:
     lines = f.readlines()
