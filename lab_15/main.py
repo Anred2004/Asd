@@ -22,12 +22,12 @@ def sort_by_degree(G):
     print(order)
     return order
 
-# Функция для проверки, смежна ли вершина с букетом
+# Функция для проверки, смежна ли вершина со списком вершин
 def is_adjacent(G, v, B):
     for u in B:
         if G[v][u] == 1: # если есть ребро между v и u
-            return True # вершина смежна с букетом
-    return False # вершина не смежна с букетом
+            return True # вершина смежна со списком вершин
+    return False # вершина не смежна со списком вершин
 
 # Функция для жадной раскраски графа
 def greedy_coloring(G):
@@ -40,7 +40,7 @@ def greedy_coloring(G):
         B = [] # создать пустой букет
         for v in order: # пройти по всем вершинам в порядке
             if color[v] == -1: # если вершина не окрашена
-                if not is_adjacent(G, v, B): # если она не смежна с букетом
+                if not is_adjacent(G, v, B): # если она не смежна со списком вершин
                     color[v] = k # окрасить ее в цвет k
                     B.append(v) # добавить ее в букет
     return color # вернуть список цветов
